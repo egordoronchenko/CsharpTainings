@@ -38,14 +38,29 @@
 
  //Задача 6
 
- Console.WriteLine("Введи число");
- int Numerus = Convert.ToInt32(Console.ReadLine());
- int Veritas = Numerus%2;
-if (Veritas == 0)
+//  Console.WriteLine("Введи число");
+//  int Numerus = Convert.ToInt32(Console.ReadLine());
+//  int Veritas = Numerus%2;
+// if (Veritas == 0)
+// {
+//     Console.Write ($"Число {Numerus} четное");
+// }
+// else
+// {
+//     Console.Write("Число "+Numerus+" нечетное");
+// }
+
+//Задача 8
+
+Console.WriteLine("Введи число");
+int number = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+
+while (count<=number)
 {
-    Console.Write ($"Число {Numerus} четное");
-}
-else
-{
-    Console.Write("Число "+Numerus+" нечетное");
+    if(count%2 == 0) 
+    {
+        Console.Write($"{count}, ");
+    }
+    count++;
 }
