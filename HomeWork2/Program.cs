@@ -16,7 +16,7 @@ Console.WriteLine(result);
 */
 
 //Задача2 
-
+/*
 int SempleSolution(int num)
 {
     while (num >999)
@@ -41,3 +41,24 @@ if (threeDigitNumber <100)
 Console.WriteLine(SempleSolution(threeDigitNumber));
 Found:
     Console.WriteLine($"число {threeDigitNumber} двузначное. Третьей цифры нет");
+    */
+
+
+String Weekend(int num )
+{
+    String hol = "выходным";
+    String job = "рабочим";
+    
+        if(num%6==0||num%7==0) return hol;
+        else return job;
+
+}
+
+
+Console.WriteLine("Введите день недели");
+int dayOfWeek = Convert.ToInt32(Console.ReadLine());
+
+if (dayOfWeek > 7) Console.WriteLine("Так то в неделе 7мь дней. ну да ладно");
+
+String result = Weekend(dayOfWeek);
+Console.WriteLine($"{dayOfWeek} является {result} днем");
