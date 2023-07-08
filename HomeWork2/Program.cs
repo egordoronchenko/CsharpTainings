@@ -56,10 +56,10 @@ int dayOfWeek = Convert.ToInt32(Console.ReadLine());
 if (dayOfWeek > 7) Console.WriteLine("Так то в неделе 7мь дней. ну да ладно");
 
 bool result = Weekend(dayOfWeek);
-Console.WriteLine($"{dayOfWeek} выходной {result});
+Console.WriteLine($"{dayOfWeek} выходной день? - {result}");
 
 
-//Задача3 
+//Задача3.1
 /*
 String Weekend(int num )
 {
@@ -70,8 +70,6 @@ String Weekend(int num )
         else return job;
 
 }
-*/
-
 
 Console.WriteLine("Введите день недели");
 int dayOfWeek = Convert.ToInt32(Console.ReadLine());
@@ -80,3 +78,4 @@ if (dayOfWeek > 7) Console.WriteLine("Так то в неделе 7мь дней
 
 String result = Weekend(dayOfWeek);
 Console.WriteLine($"{dayOfWeek} является {result} днем");
+*/
