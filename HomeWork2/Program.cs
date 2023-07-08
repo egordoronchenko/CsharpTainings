@@ -42,8 +42,25 @@ Console.WriteLine(SempleSolution(threeDigitNumber));
 Found:
     Console.WriteLine($"число {threeDigitNumber} двузначное. Третьей цифры нет");
     */
+//Задача3 
+bool Weekend(int num )
+{    
+        if(num%6==0||num%7==0) return true;
+        else return false;
+}
 
 
+Console.WriteLine("Введите день недели");
+int dayOfWeek = Convert.ToInt32(Console.ReadLine());
+
+if (dayOfWeek > 7) Console.WriteLine("Так то в неделе 7мь дней. ну да ладно");
+
+bool result = Weekend(dayOfWeek);
+Console.WriteLine($"{dayOfWeek} выходной {result});
+
+
+//Задача3 
+/*
 String Weekend(int num )
 {
     String hol = "выходным";
@@ -53,6 +70,7 @@ String Weekend(int num )
         else return job;
 
 }
+*/
 
 
 Console.WriteLine("Введите день недели");
