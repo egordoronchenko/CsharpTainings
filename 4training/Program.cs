@@ -47,7 +47,7 @@ Console.WriteLine(result);
 
 
 //Задача 3 ввод числа. выводит произведение от 1 до числа
-
+/*
 int num, composition;
 
 int Composition(int num)
@@ -65,6 +65,41 @@ int Composition(int num)
 num = ReadInt("Input a number");
 int result = Composition(num);
 Console.WriteLine(result);
+
+// Функция ввода сообщения
+int ReadInt(string message)
+{
+    Console.WriteLine(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+*/
+
+//Задача с преподавателем
+
+int size, minValue, maxValue;
+int[] CreateRandomArrow(int size,int minValue,int maxValue)
+{
+    int[] array = new int[size];
+        for(int i = 0; i < array.Length;i++)
+        {
+            array[i] = new Random().Next(minValue, maxValue+1);
+        }
+        return array;
+}
+void ShowArray(int[] array)
+{
+    for(int i = 0;i<array.Length;i++)
+    {Console.Write(array[i]+" ");}
+    //Console.WriteLine();
+
+}
+size = ReadInt("Введите длину массива");
+minValue = ReadInt("Введите минимальное число массива");
+maxValue = ReadInt("Введите максимально число массива");
+int[] myArray = CreateRandomArrow(size,minValue,maxValue);
+ShowArray(myArray);
+
+
 
 // Функция ввода сообщения
 int ReadInt(string message)
