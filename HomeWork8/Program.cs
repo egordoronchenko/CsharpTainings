@@ -158,3 +158,146 @@ NumberRowMinSumElements(myArray);
 18 20
 15 18
 */
+/*
+int rows = ReadInt("Введите количество строк: ");
+int columns = ReadInt("Введите количество столбцов: ");
+int[,] array = new int[rows, columns];
+int[,] secondArray = new int[rows, columns];
+int[,] resultArray = new int[rows, columns];
+
+void PrintArray2D(int[,]array)
+{
+    for (int i = 0;i < array.GetLength(0); i++)
+    {
+        for (int j = 0;j < array.GetLength(1);j++)
+        {
+            Console.Write(array[i,j]+" ");
+        }
+        Console.WriteLine();
+    }
+}
+
+FillArrayRandom(array);
+PrintArray2D(array);
+
+Console.WriteLine();
+
+FillArrayRandom(secondArray);
+PrintArray2D(secondArray);
+
+Console.WriteLine();
+
+if (array.GetLength(0) != secondArray.GetLength(1))
+{
+    Console.WriteLine(" Нельзя перемножить ");
+    return;
+}
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < secondArray.GetLength(1); j++)
+    {
+        resultArray[i, j] = 0;
+        for (int k = 0; k < array.GetLength(1); k++)
+        {
+            resultArray[i, j] += array[i, k] * secondArray[k, j];
+        }
+    }
+}
+
+PrintArray2D(resultArray);
+
+
+
+// Функция ввода
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+// Функция заполнения массива рандомными числами от 1 до 9
+void FillArrayRandom(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+ */
+ /*
+
+
+/*
+Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+Массив размером 2 x 2 x 2
+66(0,0,0) 25(0,1,0)
+34(1,0,0) 41(1,1,0)
+27(0,0,1) 90(0,1,1)
+26(1,0,1) 55(1,1,1)
+*/
+
+
+
+
+bool Checking(int[,,] array3d,int number)
+{
+    bool xyz = false;
+    for (int i = 0;i < array3d.GetLength(0);i++)
+    {
+        for (int j = 0;j < array3d.GetLength(1);j++)
+        {
+            for(int k = 0;k < array3d.GetLength(2);k++)
+            {
+            if (number == array3d[i,j,k]) xyz = true;
+            }
+        }
+    }
+return xyz;
+}
+
+
+//Создадим и Заполним трехмерный массив
+int[,,] array3d = new int[2,2,2];
+//array3d[0,0,0] = new Random().Next(10,100);
+
+for(int i = 0;i < array3d.GetLength(0);i++)
+{
+    for(int j=0;j<array3d.GetLength(1);j++)
+    {
+        for (int k=0;k<array3d.GetLength(2);k++)
+        {
+            int num = new Random().Next(10, 100);
+        
+            bool check = Checking(array3d,num);
+            if(check == false)
+            {
+                array3d[i,j,k] = num;
+            } 
+            else 
+            {
+                k--;
+            }
+        }
+    }
+}
+
+void Show3DArray(int[,,] array3d)
+{
+    for(int i = 0;i < array3d.GetLength(0);i++)
+    {
+        for(int j=0;j<array3d.GetLength(1);j++)
+        {
+            for (int k=0;k<array3d.GetLength(2);k++)
+            {
+                Console.Write($"{array3d[i, j, k]}({i},{j},{k}) ");
+            }
+            Console.WriteLine("");
+        }
+    }
+}
+Show3DArray(array3d);
